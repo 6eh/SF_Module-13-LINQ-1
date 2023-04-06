@@ -8,7 +8,7 @@ Parallel LINQ (PLINQ): используется для выполнения па
 
 <H2>Методы LINQ</H2>
 
-<b>OrderBy</b>
+<b>OrderBy</b><br />
 Упорядочивает элементы по возрастанию.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
@@ -18,7 +18,7 @@ var orderedNums = nums.OrderBy(n => n);
 foreach (var num in orderedNums)
    Console.WriteLine(num);
 ```
-<b>OrderByDescending</b>
+<b>OrderByDescending</b><br />
 Упорядочивает элементы по убыванию.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
@@ -28,7 +28,7 @@ var orderedNums = nums.OrderByDescending(n => n);
 foreach (var num in orderedNums)
    Console.WriteLine(num);
 ```
-<b>Where</b>
+<b>Where</b><br />
 Определяет фильтр выборки.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
@@ -38,7 +38,7 @@ var lessThenFive = nums.Where(n => n < 5);
 foreach (var num in lessThenFive)
    Console.WriteLine(num);
 ```
-<b>All</b>
+<b>All</b><br />
 Определяет, все ли элементы коллекции удовлетворяют определенному условию.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
@@ -48,7 +48,7 @@ if (nums.All(n => n < 5))
    Console.WriteLine( "Все меньше пяти" );
 }
 ```
-<b>Any</b>
+<b>Any</b><br />
 Определяет, удовлетворяет ли хотя бы один элемент коллекции определенному условию.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
@@ -58,7 +58,7 @@ if (nums.Any(n => n < 5))
    Console.WriteLine( "Хотя бы один < 5" );
 }
 ```
-<b>GroupBy</b>
+<b>GroupBy</b><br />
 Группирует элементы по ключу.
 ```csharp
 var employees = new List<Employee>
@@ -84,7 +84,7 @@ foreach (var group in groups)
    Console.WriteLine();
 }
 ```
-<b>ThenBy</b>
+<b>ThenBy</b><br />
 Задает дополнительные критерии для упорядочивания элементов возрастанию.
 ```csharp
 var studentList  = new List<Student>() {
@@ -102,7 +102,7 @@ var byNameAndAge = studentList
    // потом по возрасту (по возрастанию)
    .ThenBy(s => s.Age);
 ```
-<b>ThenByDescending</b>
+<b>ThenByDescending</b><br />
 Задает дополнительные критерии для упорядочивания элементов по убыванию.
 ```csharp
 var byNameAndAge = studentList
@@ -111,13 +111,13 @@ var byNameAndAge = studentList
    // потом по возрасту (по убыванию)
    .ThenByDescending(s => s.Age);
 ```
-<b>Reverse</b>
+<b>Reverse</b><br />
 Располагает элементы в обратном порядке.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
 nums.Reverse(); // вернет 7, 9, 2
 ```
-<b>Contains</b>
+<b>Contains</b><br />
 Определяет, содержит ли коллекция определенный элемент.
 ```csharp
 var nums = new List<int>() {2, 9, 7};
@@ -127,7 +127,7 @@ if (nums.Contains(2))
    Console.WriteLine("Нашли двойку");
 }
 ```
-<b>Distinct</b>
+<b>Distinct</b><br />
 Удаляет дублирующиеся элементы из коллекции.
 ```csharp
 var nums = new List<int>() {2, 9, 7 , 2};
@@ -136,7 +136,7 @@ var uniqueNums = nums.Distinct();
 foreach (var number in uniqueNums)
    Console.WriteLine(number);   // выведет 2, 9, 7
 ```
-<b>Except</b>
+<b>Except</b><br />
 Возвращает разность двух коллекций, то есть те элементы, которые создаются только в одной коллекции.
 ```csharp
 var listOne = new List<int>() {7 , 2, 4, 11};
@@ -149,7 +149,7 @@ foreach (var number in result)
  
 // выведет 4 и 11, так как их нет во второй коллекции
 ```
-<b>Union</b>
+<b>Union</b><br />
 Объединяет уникальные элементы двух однородных коллекций.
 ```csharp
 var listOne = new List<int>() {7 , 2};
@@ -162,7 +162,7 @@ foreach (var number in result)
  
 // выведет 7, 2, 9
 ```
-<b>Intersect</b>
+<b>Intersect</b><br />
 Возвращает пересечение двух коллекций, то есть те элементы, которые встречаются в обоих коллекциях.
 ```csharp
 var listOne = new List<int>() {7 , 2};
@@ -175,7 +175,7 @@ foreach (var number in result)
  
 // выведет общий элемент для обеих коллекций - 2
 ```
-<b>Count</b>
+<b>Count</b><br />
 Подсчитывает количество элементов коллекции, которые удовлетворяют определенному условию.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
@@ -185,21 +185,21 @@ var result = listOne.Count(e => e < 10);
 Console.WriteLine($"Количество элементов меньше 10: {result}");
 // Выведет 3
 ```
-<b>Sum</b>
+<b>Sum</b><br />
 Подсчитывает сумму числовых значений в коллекции.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
 var sum = listOne.Sum();
 // Выведет 74
 ```
-<b>Average</b>
+<b>Average</b><br />
 Подсчитывает cреднее значение числовых значений в коллекции.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
 var average = listOne.Average();
 // Выведет среднее арифметическое ( 18.5 )
 ```
-<b>Min, Max</b>
+<b>Min, Max</b><br />
 Находит минимальное и максимальное значения соответственно.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
@@ -207,7 +207,7 @@ var listOne = new List<int>() {7 , 2, 57, 8};
 Console.WriteLine(listOne.Min()); // 2
 Console.WriteLine(listOne.Max()); // 57
 ```
-<b>Take</b>
+<b>Take</b><br />
 Выбирает определенное количество элементов.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
@@ -215,7 +215,7 @@ var listOne = new List<int>() {7 , 2, 57, 8};
 var res = listOne.Take(2);
 // выберет первые два элемента (7 и 2)
 ```
-<b>Skip</b>
+<b>Skip</b><br />
 Пропускает определенное количество элементов.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
@@ -223,7 +223,7 @@ var listOne = new List<int>() {7 , 2, 57, 8};
 var res = listOne.Skip(1);
 // пропустит 1 элемент (получит 2, 57, 8)
 ```
-<b>TakeWhile</b>
+<b>TakeWhile</b><br />
 Возвращает цепочку элементов последовательности до тех пор, пока условие истинно.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
@@ -231,7 +231,7 @@ var listOne = new List<int>() {7 , 2, 57, 8};
 var res = listOne.TakeWhile( e => e < 10 );
 // будет возвращать новые элементы коллекции до тех пор, пока не встретит тот, для которого условие не выполнится (в выборку попадут только 7 и 2)
 ```
-<b>SkipWhile</b>
+<b>SkipWhile</b><br />
 Пропускает элементы в последовательности пока они удовлетворяют заданному условию и затем возвращает оставшиеся элементы.
 ```csharp
 var listOne = new List<int>() {7 , 2, 57, 8};
@@ -239,7 +239,7 @@ var listOne = new List<int>() {7 , 2, 57, 8};
 var res = listOne.SkipWhile( e => e < 10 );
 // пропустит все элементы до первого, который удовлетворит условию
 ```
-<b>Concat</b>
+<b>Concat</b><br />
 Объединяет две коллекции.
 ```csharp
 var listOne = new List<int>() {7 , 2, };
@@ -248,7 +248,7 @@ var listTwo = new List<int>() { 2, 8};
 var concatenation = listOne.Concat(listTwo);
 // выведет 7, 2, 2, 8 (т.е. допускает повторяющиеся элементы)
 ```
-<b>Zip</b>
+<b>Zip</b><br />
 Объединяет две коллекции в соответствии с определенным условием.
 ```csharp
 var listOne = new List<int>() {7 , 2, };
@@ -259,21 +259,21 @@ var result = listOne.Zip(listTwo, (a, b) => a + b);
 // объединяет элементы коллекций, выполняя определенные действия
 // здесь - попарное сложение, в результате 9 и 10
 ```
-<b>First</b>
+<b>First</b><br />
 Выбирает первый элемент коллекции, удовлетворяющий условию.
 ```csharp
 var listOne = new List<int>() {7 , 2, };
 Console.WriteLine(listOne.First()); 
 // получим 7
 ```
-<b>FirstOrDefault</b>
+<b>FirstOrDefault</b><br />
 Выбирает первый элемент коллекции, удовлетворяющий условию, или возвращает значение по умолчанию.
 ```csharp
 var listOne = new List<int>() {7 , 2, 4, 10 };
 Console.WriteLine(listOne.FirstOrDefault(a => a < 7)); 
 // получим 2, но если бы ничего не нашлось - вернуло бы 0
 ```
-<b>Single</b>
+<b>Single</b><br />
 Выбирает единственный элемент коллекции, если коллекция содержит больше или меньше одного элемента, удовлетворяющего условию, то генерируется исключение.
 ```csharp
 string[] students = { "Оля", "Иван", "Сергей", "Бонифаций"};
@@ -282,7 +282,7 @@ string firstWithLongName = students.Single(student => student.Length > 8);
  
 Console.WriteLine(firstWithLongName);   // Бонифаций
 ```
-<b>SingleOrDefault</b>
+<b>SingleOrDefault</b><br />
 Выбирает первый элемент коллекции или возвращает значение по умолчанию.
 ```csharp
 string[] students = { "Оля", "Иван", "Сергей", "Бонифаций"};
@@ -291,7 +291,7 @@ string firstWithLongName = students.SingleOrDefault(student => student.Length > 
 Console.WriteLine(firstWithLongName);
 // Здесь вернет null, так как это значение по умолчанию для типа String
 ```
-<b>ElementAt</b>
+<b>ElementAt</b><br />
 Выбирает элемент последовательности по определенному индексу.
 ```csharp
 var listOne = new List<int>() {7 , 2, 4, 10 };
@@ -299,14 +299,14 @@ var second = listOne.ElementAt(1);
 Console.WriteLine(second);
 // получим 2
 ```
-<b>Last</b>
+<b>Last</b><br />
 Выбирает последний элемент коллекции.
 ```csharp
 var listOne = new List<int>() {7 , 2, };
 Console.WriteLine(listOne.Last()); 
 // получим 2
 ```
-<b>LastOrDefault</b>
+<b>LastOrDefault</b><br />
 Выбирает последний элемент коллекции или возвращает значение по умолчанию.
 ```csharp
 var emptyList = new List<int>() {};
